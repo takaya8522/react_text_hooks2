@@ -18,29 +18,29 @@ const Timer = () => {
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
-    console.log('init');
+    // console.log('init');
     let intervalId = null;
     if (isRunning) {
       intervalId = window.setInterval(() => {
-        console.log('interval running');
+        // console.log('interval running');
         setTime((prev) => prev + 1);
       }, 1000);
     }
     return () => {
       window.clearInterval(intervalId);
-      console.log('end');
+      // console.log('end');
     };
   }, [isRunning]);
 
   useEffect(() => {
-    console.log('updated');
+    // console.log('updated');
 
     document.title = "counter:" + time;
     window.localStorage.setItem("time-key", time);
 
     return () => {
-      debugger
-      console.log('updated end');
+      // debugger
+      // console.log('updated end');
     };
   }, [time]);
 
