@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useCount } from "./hooks";
 
 const Example = () => {
+  const { count, countUp } = useCount();
   return (
     <>
-      <div>Counts: {}</div>
-      <button onClick={() => {}}>Count Up!</button>
+      <div>Counts: {count}</div>
+      <button onClick={countUp}>Count Up!</button>
     </>
   );
 };
